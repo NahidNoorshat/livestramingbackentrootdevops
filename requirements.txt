@@ -1,0 +1,17 @@
+asgiref
+certifi
+charset-normalizer
+Django
+django-cors-headers
+django-distill
+django-environ
+djangorestframework
+idna
+Pillow
+pytz
+requests
+sqlparse
+tzdata
+urllib3
+psycopg2-binary
+gunicorn
