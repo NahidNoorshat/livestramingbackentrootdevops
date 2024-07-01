@@ -32,11 +32,11 @@ services:
   nginx:
     image: nginx
     ports:
-      - "91.219.237.46:80:80"
+      - "80:80"
       - "443:443"
     volumes:
-      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./nginx/certs:/etc/letsencrypt
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/certs:/etc/letsencrypt/live/123fblive.com
       - ./nginx/www:/var/www/certbot
     depends_on:
       - web
