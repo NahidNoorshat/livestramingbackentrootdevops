@@ -12,7 +12,7 @@ class LeagueAdmin(admin.ModelAdmin):
 @admin.register(Match)
 class MatchAdmin(admin.ModelAdmin):
     list_display = ('fixture_id', 'league', 'home_team_name', 'away_team_name', 'match_date', 'status', 'home_team_score', 'away_team_score', 'liveurl')
-    search_fields = ('home_team_name', 'away_team_name', 'venue_name', 'venue_city')
+    search_fields = ('home_team_name', 'away_team_name')
     list_filter = ('league', 'status', 'match_date')
 
 
