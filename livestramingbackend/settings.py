@@ -26,7 +26,10 @@ SECRET_KEY = "django-insecure-!_eg^haar34@a-zp40sge@vp#5#7fkhzy!hx*sd-lm0*&&u02e
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['91.219.237.46','*','123fblive.com','www.123fblive.com']
+ALLOWED_HOSTS = ['*','app.123fblive.com']
+CSRF_TRUSTED_ORIGINS = [
+    'https://app.123fblive.com'
+]
 
 
 # Application definition
@@ -79,24 +82,24 @@ WSGI_APPLICATION = "livestramingbackend.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
-
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("POSTGRES_DB"),
-        'USER': os.environ.get("POSTGRES_USER"),
-        'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
-        'HOST': os.environ.get("SQL_HOST", "db"),
-        'PORT': os.environ.get("SQL_PORT", "5432"),
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get("POSTGRES_DB"),
+#         'USER': os.environ.get("POSTGRES_USER"),
+#         'PASSWORD': os.environ.get("POSTGRES_PASSWORD"),
+#         'HOST': os.environ.get("SQL_HOST", "db"),
+#         'PORT': os.environ.get("SQL_PORT", "5432"),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
